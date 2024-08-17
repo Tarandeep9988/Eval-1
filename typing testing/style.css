@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.main_box {
+    width: 90vw;
+    margin: auto;
+}
+#para_to_type {
+    height: 10rem;
+    width: 100%;
+    border: 1px solid;
+    margin: 20px 0;
+}
+#typing_area {
+    width: 100%;   
+    margin: 20px 0;
+}
+#btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 5px 0;
+}
