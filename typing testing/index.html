@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
-        <div class="main_box">
-            <p id="para_to_type"></p>
-            <textarea name="typing_area" id="typing_area" rows="10" disabled></textarea>
-            <p>
-                Typing speed: <span id="typ-speed"></span> <br>
-                Accuracy: <span id="typ-accuracy"></span>
-            </p>
-            <button id="btn">Start</button>
+    <div class="body">
+        <div class="main_section">
+            <h1>Test your typing skills</h1>
+            <div class="main_box">
+                <p id="content_box"></p>
+                <hr>
+                <input id="input_field" class="input_box" type="text" placeholder="Type here" autocomplete="">
+                <button id="start_stop_btn">Start</button>
+                <div class="details">
+                    <ul>
+                        <li>Speed: <span id="speed">-</span> WPM</li>
+                        <li>Accuracy: <span id="accuracy">-</span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
