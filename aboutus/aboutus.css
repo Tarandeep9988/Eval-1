@@ -1,0 +1,52 @@
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+/* Homepage */
+.nav_bar {
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    gap: 30px;
+    font-size: 20px;
+}
+.logo {
+    height: 90%;
+    margin-right: auto;
+}
+.nav_links li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 4px;
+}
+.nav_links li a{
+    color: black;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+#login_btn {
+    background-color: #1E90FF;
+    border: none;
+    padding:5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.nav_links li a:hover{
+    color: #1E90FF;
+}
+
+/* main_section */
+.main_section{
+    margin-top: -60px;
+    height: 100vh;
+    background-image: url(./images/background.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
