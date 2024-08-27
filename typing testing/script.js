@@ -10,6 +10,7 @@ var starting_time = new Date();
 content_box.textContent = default_content;
 
 function startTypingTest() {
+    button.innerText = 'Stop';
     input_field.removeAttribute('disabled');
     speed_tag.textContent = "-";
     input_field.value = '';
@@ -38,21 +39,22 @@ function startTypingTest() {
         else {
             input_field.style.backgroundColor = 'white';
         }
-        const accuracy = ((words_typed - errors) / words_typed) * 100;
+        const accuracy = ((typed_length - errors) / typed_length) * 100;
 
+        if (typed_length === content.length) {
+            stopTypingTest();
+        }
         // Plugging values of speed and accuracy
-        speed_tag.textContent = String(Math.round(speedWPM, 1));
+        speed_tag.textContent = typed_length ? String(Math.round(speedWPM, 1)) : String(0);
         accuracy_tag.textContent = String(Math.round(accuracy, 1));
     });
     
 }
 
 function stopTypingTest() {
-    const typed_content = input_field.value;
-    const words_typed = typed_content.split(' ').length;
-    const time_taken = (Date.now() - starting_time) / 1000;
-    const speedWPM = (words_typed * 60) / time_taken
-    speed_tag.textContent = String(Math.round(speedWPM, 1));
+    button.innerText = 'Start';
+    input_field.style.backgroundColor = 'white';
+    input_field.setAttribute('disabled', '');
     content_box.textContent = default_content;
 }
 
@@ -60,12 +62,10 @@ button.addEventListener('click', (e) => {
     e.preventDefault();
     switch (button.innerText) {
         case 'Start':
-                button.innerText = 'Stop';
                 startTypingTest();
             break;
             
             case 'Stop':
-                button.innerText = 'Start';
                 stopTypingTest();
             break;
     }
