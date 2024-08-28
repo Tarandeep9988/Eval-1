@@ -5,11 +5,26 @@ const speed_tag = document.getElementById('speed');
 const accuracy_tag = document.getElementById('accuracy');
 
 const default_content = "HERE TEXT WILL BE DISPLAYED";
-const content = "A quick brown fox jumps over the lazy dog";
 var starting_time = new Date();
 content_box.textContent = default_content;
 
+let content = new String;
+const typingPracticeParagraphs = [
+    "Typing is a skill that improves with practice. Focus on accuracy first, then speed.",
+    "Good posture is key to effective typing. Sit up straight and keep your wrists relaxed.",
+    "Consistency is important. Regular practice helps build muscle memory and speed.",
+    "Typing without looking at the keys can boost your speed. Try to memorize the key positions.",
+    "Accuracy matters more than speed when you start. It’s easier to type fast once you’re accurate."
+  ];
+
+function insertRandomContent() {
+    
+    const random = Math.floor(Math.random() * (typingPracticeParagraphs.length)) % 5;
+    content = typingPracticeParagraphs[random];
+}
+
 function startTypingTest() {
+    insertRandomContent();
     button.innerText = 'Stop';
     input_field.removeAttribute('disabled');
     speed_tag.textContent = "-";
