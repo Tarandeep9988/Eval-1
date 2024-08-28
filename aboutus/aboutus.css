@@ -1,52 +1,72 @@
-/* Universal Selector */
-* {
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    font-family: Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Homepage */
-.nav_bar {
-    height: 60px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 10px;
-    gap: 30px;
-    font-size: 20px;
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
 }
-.logo {
-    height: 90%;
-    margin-right: auto;
+
+header h1 {
+    margin: 0;
 }
-.nav_links li {
-    display: inline-block;
+
+header nav ul {
     list-style: none;
-    padding: 0 4px;
-}
-.nav_links li a{
-    color: black;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-}
-#login_btn {
-    background-color: #1E90FF;
-    border: none;
-    padding:5px 15px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.nav_links li a:hover{
-    color: #1E90FF;
+    padding: 0;
 }
 
-/* main_section */
-.main_section{
-    margin-top: -60px;
-    height: 100vh;
-    background-image: url(./images/background.png);
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-size:contain;
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* About Section Styles */
+.about {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.about h3 {
+    margin-top: 20px;
+    color: #444;
+}
+
+.about p {
+    margin-bottom: 20px;
+}
+
+.about ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about ul li {
+    margin-bottom: 10px;
 }
