@@ -8,6 +8,10 @@ button {
     cursor: pointer;
 }
 
+body {
+    /* New thing i learned */
+    overscroll-behavior: none;
+}
 /* Homepage */
 .nav_bar {
     height: 60px;
@@ -33,6 +37,7 @@ button {
 }
 #login_btn {
     background-color: #1E90FF;
+    color: white;
     border: none;
     padding:5px 15px;
     border-radius: 15px;
@@ -53,6 +58,29 @@ button {
     background-size:contain;
 }
 
+.main_child {
+    padding-top: 300px;
+    font-size: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 400;
+    color: #1E90FF;
+    width: 80%;
+    margin: auto;
+}
+.main_child a {
+    color: white;
+    background-color: #1E90FF;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-size: 30px;
+    box-sizing: border-box;
+    text-decoration: none;
+    width: fit-content;
+}
+
 /* what_sec */
 .what_sec{
     width: 80%;
@@ -62,6 +90,10 @@ button {
     display: flex;
     gap: 30px;
     justify-content: space-between;
+}
+.what_sec_parent {
+    background-color: #f4f5f6;
+    padding: 30px 0;
 }
 
 .what_sec > .right p:nth-child(1) {
@@ -100,7 +132,7 @@ button {
     display: flex;
     justify-content: center;
     gap: 100px;
-    background-color: #f4f5f6;
+    
 }
 .sec4_com {
     width: 30%;
@@ -116,6 +148,9 @@ button {
 }
 
 /* section 5 */
+.sec5 {
+    background-color: #f4f5f6;
+}
 .sec5 > * {
     width: 90%;
     max-width: 800px;
@@ -219,5 +254,51 @@ button {
     border-radius: 5px;
     color: white;
 }
-
 /* footer */
+
+
+
+/* media-query */
+@media only screen and (max-width: 800px) {
+    .sec5_2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .what_sec {
+        flex-direction: column;
+        text-align: center;
+    }
+    .section4 {
+        flex-direction: column;
+    }
+    .sec4_com {
+        width: 100%;
+    }
+    .section2 img {
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .sec5_2 {
+        grid-template-columns: 80%;
+        justify-content: center;
+    }
+    .sec6_1 {
+        width: 70%;
+    }
+    .sec6 > p:first-child {
+        font-size: 12px;
+    }
+    .sec6 > p:nth-child(2) {
+        font-size: 20px;
+    }
+    .nav_links {
+        width: 100px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        margin-right: 40px;
+    }
+    .logo {
+        width: 20%;
+    }
+}
