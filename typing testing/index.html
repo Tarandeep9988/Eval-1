@@ -13,13 +13,17 @@
             <div class="main_box">
                 <p id="content_box"></p>
                 <hr>
-                <input id="input_field" class="input_box" type="text" placeholder="Type here" autocomplete="off" disabled>
+                <textarea name="input_field" id="input_field" placeholder="Press start button" autocomplete="off" disabled></textarea>
                 <button id="start_stop_btn">Start</button>
-                <div class="details">
-                    <ul>
-                        <li>Speed: <span id="speed">0</span> WPM</li>
-                        <li>Accuracy: <span id="accuracy">100</span> %</li>
-                    </ul>
+            </div>
+            <div class="detail_box">
+                <div class="speed_box">
+                    <span id="speed" class="results">0</span>
+                    <span class="label">words/min</span>
+                </div>
+                <div class="accuracy_box">
+                    <span id="accuracy" class="results">100</span>
+                    <span class="label">% accuracy</span>
                 </div>
             </div>
         </div>
