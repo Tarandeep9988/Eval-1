@@ -14,12 +14,17 @@ body {
 }
 /* Homepage */
 .nav_bar {
+    margin: 10px 10px 0 10px;
     height: 60px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 0 10px;
     gap: 30px;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(108, 111, 115);
+    box-shadow: 0 1px 10px rgb(108, 111, 115);
+    border-radius: 10px;
 }
 .logo {
     height: 90%;
@@ -51,7 +56,7 @@ body {
 
 /* main_section */
 .main_section{
-    margin-top: -60px;
+    margin-top: -70px;
     height: 100vh;
     background-image: url(./images/background.png);
     background-position: bottom right;
@@ -178,9 +183,21 @@ body {
 
 .sec5_2 {
     display: grid;
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 40px;
+}
+
+.sec5_2_1 {
+    border-radius: 10px;
+    padding: 10px;
+    transition-property: box-shadow, translate;
+    transition-timing-function: linear;
+    transition-duration: 0.2s;
+    user-select: none;
+}
+.sec5_2_1:hover {
+    box-shadow: 0 5px 10px #1E90FF;
+    translate: 0 -10px;
 }
 .sec5_detail {
     text-align: center;
