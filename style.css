@@ -101,6 +101,15 @@ body {
     background-color: #f4f5f6;
     padding: 30px 0;
 }
+.what_sec .left video {
+   width: 100%; 
+}
+.what_sec .left {
+    width: 50%;
+}
+.what_sec .right {
+    width: 50%;
+}
 
 .what_sec > .right p:nth-child(1) {
     padding-top: 5px;
@@ -285,6 +294,13 @@ body {
         flex-direction: column;
         text-align: center;
     }
+    .what_sec .left {
+        width: 100%;
+    }
+    .what_sec .right {
+        width: 100%;
+    }
+    
     .section4 {
         flex-direction: column;
     }
