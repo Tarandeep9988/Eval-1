@@ -13,8 +13,14 @@ body {
     overscroll-behavior: none;
 }
 /* Homepage */
-.nav_bar {
+header {
+    position: sticky;
+    top: 0;
     margin: 10px 10px 0 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.nav_bar {
+    
     height: 60px;
     display: flex;
     justify-content: flex-end;
