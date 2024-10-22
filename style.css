@@ -82,16 +82,19 @@ header {
 }
 
 .main_child {
-    padding-top: 300px;
-    font-size: 45px;
+    padding-top: 30vh;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-weight: 400;
     color: #1E90FF;
     width: 80%;
     margin: auto;
     align-items: center;
+}
+.main-section-heading{
+    text-align: center;
+    font-size: 45px;
+    font-weight: 400;
 }
 .main_child_box {
     margin-top: 20px;
@@ -298,7 +301,9 @@ header {
     gap: 20px;
     background-color: rgba(255, 255, 255, 0.40);
     border-radius: 5px;
-
+}
+#eamil, #subscribe_btn {
+    font-size: 16px;
 }
 #email {
     flex: 1;
@@ -325,13 +330,15 @@ header {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 5px 1px black;
     padding: 5px 6px 12px;
     text-align: center;
     opacity: 0;
+    cursor: pointer;
+    user-select: none;
     visibility: hidden;
-    transition-property: opacity;
+    transition-property: visibility opacity;
     transition-duration: 0.2s;
     transition-timing-function: linear;
 }
@@ -366,6 +373,14 @@ header {
     .section2 img {
         height: 200px;
     }
+    .main-section-heading{
+        text-align: center;
+        font-size: 35px;
+        font-weight: 300;
+    }
+    .main_child a {
+        font-size: 25px;
+    }
 }
 @media only screen and (max-width: 600px) {
     .sec5_2 {
@@ -390,5 +405,13 @@ header {
     }
     .logo {
         width: 20%;
+    }
+    .main-section-heading{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 300;
+    }
+    .main_child a {
+        font-size: 20px;
     }
 }
