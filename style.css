@@ -64,10 +64,10 @@ header {
 .main_section{
     margin-top: -70px;
     height: 100vh;
-    background-image: url(./images/background.png);
-    background-position: bottom right;
+    background-image: url(./images/background.png),linear-gradient(rgba(255, 255, 255, 0.6), white), url(./images/alphabet_bg.avif);
+    background-position: bottom right, center ,center;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:contain , cover, cover;
 }
 
 .main_child {
@@ -88,9 +88,14 @@ header {
     padding: 10px 30px;
     border-radius: 8px;
     font-size: 30px;
-    box-sizing: border-box;
     text-decoration: none;
+    border: 2px solid #1E90FF;
+    box-sizing: border-box;
     width: fit-content;
+}
+.main_child a:nth-child(2) {
+    background-color: white;
+    color: #1E90FF;
 }
 
 /* what_sec */
@@ -145,6 +150,7 @@ header {
     margin: 20px 0;
     padding: 10px 30px;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 /* section 4 */

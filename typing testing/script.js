@@ -9,22 +9,26 @@ var starting_time = new Date();
 content_box.textContent = default_content;
 
 let content = new String;
-const typingPracticeParagraphs = [
-    "Typing is a skill that improves with practice. Focus on accuracy first, then speed.",
-    "Good posture is key to effective typing. Sit up straight and keep your wrists relaxed.",
-    "Consistency is important. Regular practice helps build muscle memory and speed.",
-    "Typing without looking at the keys can boost your speed. Try to memorize the key positions.",
-    "Accuracy matters more than speed when you start. It’s easier to type fast once you’re accurate."
-  ];
+// const typingPracticeParagraphs = [
+//     "Typing is a skill that improves with practice. Focus on accuracy first, then speed.",
+//     "Good posture is key to effective typing. Sit up straight and keep your wrists relaxed.",
+//     "Consistency is important. Regular practice helps build muscle memory and speed.",
+//     "Typing without looking at the keys can boost your speed. Try to memorize the key positions.",
+//     "Accuracy matters more than speed when you start. It’s easier to type fast once you’re accurate."
+//   ];
 
-function insertRandomContent() {
+// function insertRandomContent() {
     
-    const random = Math.floor(Math.random() * (typingPracticeParagraphs.length)) % 5;
-    content = typingPracticeParagraphs[random];
+//     const random = Math.floor(Math.random() * (typingPracticeParagraphs.length)) % 5;
+//     content = typingPracticeParagraphs[random];
+// }
+
+function insertContent() {
+    content = window.localStorage.getItem('content');
 }
 
 function startTypingTest() {
-    insertRandomContent();
+    insertContent();
     button.innerText = 'Stop';
     input_field.removeAttribute('disabled');
     speed_tag.textContent = "-";
