@@ -1,5 +1,7 @@
 const getStartedBtns = document.querySelectorAll('.get_started_btn');
 const subscribeBtn = document.getElementById('subscribe_btn');
+const toTopArrow = document.getElementById('to-top-arrow')
+const header = document.querySelector("header");
 
 for (const btn of getStartedBtns) {
     btn.addEventListener('click', () => {
@@ -13,13 +15,21 @@ subscribeBtn.onclick = () => {
 
 // Scrolling event
 window.onscroll = function() {
-    const ele = document.querySelector("header");
     if (window.scrollY > 10) {
-        ele.classList.add('scrolled');
-        console.log("this");
-        
+        header.classList.add('scrolled');
+        toTopArrow.style.opacity = "1"
+        toTopArrow.style.visibility = "visible"
     }
     else {
-        ele.classList.remove('scrolled');
+        header.classList.remove('scrolled');
+        toTopArrow.style.opacity = "0"
+        toTopArrow.style.visibility = "hidden"
     }
 }
+
+toTopArrow.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });    
+})

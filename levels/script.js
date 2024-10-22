@@ -59,3 +59,16 @@ function addAdvancedLevels() {
 addBeginnerLevels();
 addIntermediateLevels();
 addAdvancedLevels();
+
+// Scrolling event
+window.onscroll = function() {
+  const ele = document.querySelector("header");
+  if (window.scrollY > 10) {
+      ele.classList.add('scrolled');
+      console.log("this");
+      
+  }
+  else {
+      ele.classList.remove('scrolled');
+  }
+}
