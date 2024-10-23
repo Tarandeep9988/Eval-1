@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main_section">
+    <form class="main_section">
       <div class="main_box1">
         <h1>Log in</h1>
       </div>
@@ -29,20 +29,21 @@
             <p>
               <label for="user">Username/Email</label>
             </p>
-            <input type="text" id="user">
+            <input type="text" id="user" required>
           </div>
           <div class="pass_box">
             <p>
               <label for="user_pass">Password</label><a id="forgot_pass" href="">Forgot password?</a>
             </p>
-            <input type="password" id="user_pass">
+            <input type="password" id="user_pass" required>
           </div>
         </div>
       </div>
       <div class="main_box3">
-        <button id="login_btn">Log in</button>
+        <button id="login_btn" type="submit">Log in</button>
         <p>Don't have an account? <a href="">Sign up</a></p>
       </div>
-    </div>
+    </form>
+    <script src="script.js"></script>
   </body>
 </html>
