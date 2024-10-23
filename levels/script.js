@@ -4,7 +4,8 @@ import { beginnerLevels, intermediateLevels, advancedLevels } from './levels.js'
 const beginnerBox = document.getElementById('beginner_box');
 const intermediateBox = document.getElementById('intermediate_box');
 const AdvancedBox = document.getElementById('advanced_box');
-  
+const toTopArrow = document.getElementById('to-top-arrow')
+const header = document.querySelector("header");
 
 function createLevelBox(targetBox, data) {
     const levelBox = document.createElement('div');
@@ -62,13 +63,21 @@ addAdvancedLevels();
 
 // Scrolling event
 window.onscroll = function() {
-  const ele = document.querySelector("header");
-  if (window.scrollY > 10) {
-      ele.classList.add('scrolled');
-      console.log("this");
-      
-  }
-  else {
-      ele.classList.remove('scrolled');
-  }
+    if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+        toTopArrow.style.opacity = "1"
+        toTopArrow.style.visibility = "visible"
+    }
+    else {
+        header.classList.remove('scrolled');
+        toTopArrow.style.opacity = "0"
+        toTopArrow.style.visibility = "hidden"
+    }
 }
+
+toTopArrow.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });    
+})
