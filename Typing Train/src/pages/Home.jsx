@@ -10,7 +10,6 @@ import Navbar from '../components/Home/Navbar'
 function Home() {
   return (
     <>
-        <Navbar />
         <EntrySection />
         <WhatIsTypingTrain />
         <Section4 />
