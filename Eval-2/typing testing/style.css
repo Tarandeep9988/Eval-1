@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+li {
+    list-style: none;
+}
+.body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(./images/bg_typing_test.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    border: 2px solid black;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+.main_section > h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+.main_box {
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    margin: auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.content_box {
+    margin-bottom: 10px;
+}
+#input_field {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    resize: none;
+} 
+
+hr {
+    margin: 10px 0;
+}
+/* detail_box */
+.detail_box{
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.speed_box, .accuracy_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.results {
+    display: flex;
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    font-size: 36px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+.label {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#start_stop_btn {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 0;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: box-shadow 0.1s linear;
+}
+
+#start_stop_btn:hover {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 800px) {
+    * {
+        font-size: 16px;
+    }
+    .main_section > h1 {
+        font-size: 35px;
+    }
+    
+}
