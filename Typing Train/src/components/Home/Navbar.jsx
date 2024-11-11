@@ -30,6 +30,9 @@ const Navbar = () => {
         };
     }, []); // Empty array means this effect runs only once, on mount
 
+    const goToLogin = () => {
+      window.open('./login_page/login.html', '_blank'); 
+    }
   return (
     <header>
       <nav className="nav_bar">
@@ -39,7 +42,7 @@ const Navbar = () => {
           <li><NavLink style={({ isActive }) => ({color: isActive ? '#1E90FF' : ''})} to="aboutUs">About</NavLink></li>
           <li><NavLink style={({ isActive }) => ({color: isActive ? '#1E90FF' : ''})} to="contactUs">Contact</NavLink></li>
         </ul>
-        <button id="login_btn">Login</button>
+        <button id="login_btn" onClick={goToLogin}>Login</button>
       </nav>
     </header>
   );

@@ -8,7 +8,7 @@ function EntrySection() {
                 <h2 className="main-section-heading">Master Your Typing Skills - Speed, Accuracy, and Fun in One Place!</h2>
                 <div className="main_child_box">
                     <a target="_blank" href="./typing testing/index.html">Typing test</a>
-                    <a target="_blank" href="http://127.0.0.1:3002/levels/levels.html">Get Started</a>
+                    <a target="_blank" href="./levels/levels.html">Get Started</a>
                 </div>
             </div>
         </div>
