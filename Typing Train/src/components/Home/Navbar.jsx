@@ -38,7 +38,6 @@ const Navbar = () => {
           <li><NavLink style={({ isActive }) => ({color: isActive ? '#1E90FF' : ''})} to="">Home</NavLink></li>
           <li><NavLink style={({ isActive }) => ({color: isActive ? '#1E90FF' : ''})} to="about">About</NavLink></li>
           <li><NavLink style={({ isActive }) => ({color: isActive ? '#1E90FF' : ''})} to="contact">Contact</NavLink></li>
-          <li><NavLink style={({ isActive }) => ({color: isActive ? '#1E90FF' : ''})} to="leaderboard">Leaderboard</NavLink></li>
         </ul>
         <button id="login_btn">Login</button>
       </nav>
