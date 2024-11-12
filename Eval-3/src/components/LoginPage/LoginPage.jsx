@@ -1,6 +1,8 @@
 import React from "react";
 import styles from './LoginPage.module.css';
 import classNames from 'classnames';
+import Button from "./Button";
+
 
 function LoginPage() {
   return (
@@ -12,18 +14,9 @@ function LoginPage() {
           </div>
           <div className={styles.main_box2}>
             <div className={styles.child_box1}>
-              <button className={styles.btn}>
-                <img src="./images/google_logo.webp" alt="google_logo" /> Log in
-                with Google
-              </button>
-              <button className={styles.btn}>
-                <img src="./images/fb_logo.webp" alt="fb_logo" /> Log in with
-                Facebook
-              </button>
-              <button className={styles.btn}>
-                <img src="./images/twitter_logo.webp" alt="twitter_logo" /> Log
-                in with Twitter
-              </button>
+              <Button imgSrc="./images/google_logo.webp" content="Google"/>
+              <Button imgSrc="./images/fb_logo.webp" content="Facebook"/>
+              <Button imgSrc="./images/twitter_logo.webp" content="Twitter"/>
             </div>
             <div className={styles.child_box3}>Or</div>
             <div className={styles.child_box2}>
@@ -53,7 +46,6 @@ function LoginPage() {
             </p>
           </div>
         </form>
-        <script src="script.js"></script>
       </div>
     </>
   );
