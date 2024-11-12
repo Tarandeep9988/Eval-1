@@ -11,7 +11,7 @@ function LevelPage() {
                 <div className={styles.section} id={styles.beginner_box}>
                     {
                         BeginnerLevels.map((level, index) => {
-                            return <LevelCard key={index} levelIconSrc={level.icon} levelTitle={level.name} levelNumber={level.level} />
+                            return <LevelCard key={index} levelIconSrc={level.icon} levelTitle={level.name} levelNumber={level.level} levelContent={level.content} />
                         })
                     }
                 </div>

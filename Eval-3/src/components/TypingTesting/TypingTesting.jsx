@@ -1,78 +1,89 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./TypingTesting.module.css";
+import { useLocation } from "react-router-dom";
 
 function TypingTesting() {
-  const [content, setContent] = useState("HERE TEXT WILL BE DISPLAYED");
+  const location = useLocation();
+  
+  const defaultContent = "HERE TEXT WILL BE DISPLAYED";
+  const [content, setContent] = useState(defaultContent);
   const [speed, setSpeed] = useState(0);
   const [accuracy, setAccuracy] = useState(100);
-  const [isTyping, setIsTyping] = useState(false);
-  const [errors, setErrors] = useState(0);
+  const start_stop_btn = useRef(null);
+  const input_field = useRef(null);
 
-  const inputFieldRef = useRef(null);
-  const contentBoxRef = useRef(null);
-  const buttonRef = useRef(null);
+  var starting_time = new Date();
 
-  let startingTime = null;
-  let lastTime = null; // Track last time for accurate WPM calculation
-
-  useEffect(() => {
-    setContent("Hello my name is Tarandeep Singh");  // Default text, you can replace it with content from localStorage
-  }, []);
-
+  const getContent = () => { 
+    //   const typingPracticeParagraphs = [
+    //   "Typing is a skill that improves with practice. Focus on accuracy first, then speed.",
+    //   "Good posture is key to effective typing. Sit up straight and keep your wrists relaxed.",
+    //   "Consistency is important. Regular practice helps build muscle memory and speed.",
+    //   "Typing without looking at the keys can boost your speed. Try to memorize the key positions.",
+    //   "Accuracy matters more than speed when you start. It’s easier to type fast once you’re accurate."
+    // ];
+    // const randomIndex = Math.floor(Math.random() * typingPracticeParagraphs.length);
+    // const para = typingPracticeParagraphs[randomIndex];
+    // return para;
+    return location.state;
+  }
+  
   const startTypingTest = () => {
-    setIsTyping(true);
-    startingTime = Date.now();
-    lastTime = startingTime; // Initialize last time when typing starts
-    inputFieldRef.current.removeAttribute("disabled");
-    buttonRef.current.innerText = "Stop";
-    contentBoxRef.current.textContent = content;
-    inputFieldRef.current.value = "";
-    inputFieldRef.current.focus();
+    input_field.current.disabled = false;
+    input_field.current.style.backgroundColor = "white";
+    input_field.current.value = "";
+    console.log("Start typing test");
+    setContent(getContent());
+    starting_time = Date.now();
+    input_field.current.focus();
   };
-
   const stopTypingTest = () => {
-    setIsTyping(false);
-    inputFieldRef.current.setAttribute("disabled", "");
-    buttonRef.current.innerText = "Start";
-    contentBoxRef.current.textContent = "HERE TEXT WILL BE DISPLAYED";
+    input_field.current.disabled = true;
+    setContent(defaultContent);
   };
 
-  const handleInputChange = (e) => {
-    const typedContent = e.target.value;
-    const typedLength = typedContent.length;
+  const handleButtonclick = () => {
+    const btn_val = start_stop_btn.current.innerText;
+    switch (btn_val) {
+      case "Start":
+        start_stop_btn.current.innerText = "Stop";
+        startTypingTest();
+        break;
 
-    const timeTaken = (Date.now() - startingTime) / 60000; // time in minutes
-
-    // Only calculate WPM after at least 1 second
-    if (timeTaken > 0) {
-      const wordsTyped = typedContent.split(" ").length;
-      const speedWPM = wordsTyped / timeTaken;
-      setSpeed(Math.round(speedWPM));
+      case "Stop":
+        stopTypingTest();
+        start_stop_btn.current.innerText = "Start";
+        break;
     }
+  };
 
-    // Handle accuracy and errors
-    let newErrors = 0;
-    for (let i = 0; i < typedLength; i++) {
-      if (typedContent[i] !== content[i]) {
-        newErrors++;
+  const handleKeyboardInput = () => {
+    const typed_content = input_field.current.value;
+    const typed_length = typed_content.length;
+    // Calculating the time taken
+    const time_taken = (Date.now() - starting_time) / 60000; // milliseconds->minutes
+    // Calculating speed
+    const words_typed = typed_content.split(" ").length;
+    const speedWPM = words_typed / time_taken;
+    setSpeed(typed_length ? String(Math.round(speedWPM, 1)) : String(0));
+    
+    
+    let errors = 0;
+    for (let i = 0; i < typed_length; i++) {
+      if (!(typed_content[i] === content[i])) {
+        errors++;
+        console.log("Error");
       }
     }
-    setErrors(newErrors);
-
-    const accuracy = typedLength > 0 ? ((typedLength - newErrors) / typedLength) * 100 : 100;
-    setAccuracy(Math.round(accuracy));
-
-    // Stop typing test if typed content matches the content
-    if (typedLength === content.length) {
-      stopTypingTest();
-    }
-  };
-
-  const handleButtonClick = () => {
-    if (isTyping) {
-      stopTypingTest();
+    if (errors > 0) {
+      input_field.current.style.backgroundColor = "red";
     } else {
-      startTypingTest();
+      input_field.current.style.backgroundColor = "white";
+    }
+    const new_accuracy = ((typed_length - errors) / typed_length) * 100;
+    setAccuracy(String(Math.round(new_accuracy, 1)));
+    if (typed_length === content.length) {
+      stopTypingTest();
     }
   };
 
@@ -81,17 +92,21 @@ function TypingTesting() {
       <div className={styles.main_section}>
         <h1>Test your typing skills</h1>
         <div className={styles.main_box}>
-          <p ref={contentBoxRef}>{content}</p>
+          <p>{content}</p>
           <hr className={styles.hr_line} />
           <textarea
-            ref={inputFieldRef}
             className={styles.input_field_box}
             placeholder="Press start button"
             autoComplete="off"
+            ref={input_field}
             disabled
-            onChange={handleInputChange}
+            onChange={handleKeyboardInput}
           ></textarea>
-          <button ref={buttonRef} className={styles.start_stop_button} onClick={handleButtonClick}>
+          <button
+            ref={start_stop_btn}
+            className={styles.start_stop_button}
+            onClick={handleButtonclick}
+          >
             Start
           </button>
         </div>

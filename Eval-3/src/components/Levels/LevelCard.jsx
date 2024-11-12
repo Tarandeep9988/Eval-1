@@ -2,11 +2,16 @@ import React from "react";
 import styles from './Level.module.css'
 import { useNavigate } from "react-router-dom";
 
-function LevelCard({levelNumber, levelTitle, levelIconSrc}) {
-
+function LevelCard({levelNumber, levelTitle, levelIconSrc, levelContent}) {
   const navigate = useNavigate();
   const startTypingTest = () => { 
-    navigate('/typingtest');
+    navigate('/typingtest',
+      {
+        state: levelContent,
+      }
+    );
+
+    
   };
   return (
     <>
