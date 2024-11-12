@@ -357,7 +357,7 @@ const styles = {
   },
   icon: {
     fontSize: '30px',
-    color: '#3e2093',
+    color: '#00bfff',
     marginBottom: '10px',
   },
   topic: {
@@ -379,7 +379,7 @@ const styles = {
   topicText: {
     fontSize: '23px',
     fontWeight: '600',
-    color: '#3e2093',
+    color: '#00bfff',
   },
   inputBox: {
     height: '55px',
@@ -405,6 +405,7 @@ const styles = {
   button: {
     display: 'inline-block',
     marginTop: '12px',
+    backgroundColor: '#00bfff'
   },
   submitButton: {
     color: '#fff',
