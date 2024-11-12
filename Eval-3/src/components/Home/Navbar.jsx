@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
     useEffect(() => {
@@ -30,8 +30,9 @@ const Navbar = () => {
         };
     }, []); // Empty array means this effect runs only once, on mount
 
+    const navigate = useNavigate();
     const goToLogin = () => {
-      window.open('./login_page/login.html', '_blank'); 
+        navigate('/login');
     }
   return (
     <header>

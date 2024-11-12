@@ -9,20 +9,27 @@
 }
 /* body */
 .body {
-    background-image: url(./images/bg.jpg);
-    background-repeat: no-repeat;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)), url(./images/alphabet_bg.avif);
+    background-position: center ,center;
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 100vw auto;
+    margin-top: -72px;
+    padding: 120px;
+    box-sizing: border-box;
 }
 
 /* main_section */
 
-.main_section{
-    width: 80%;
+.main_section_login{
+    width: 90%;
     max-width: 1000px;
-    margin: 200px auto;
+    margin: auto;
     background-color: white;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 5px;
+    box-shadow: 0px 0vh 10px 1px rgba(0,0,0);  
 }
 
 /* main_box1 */
@@ -50,7 +57,7 @@
     justify-content: space-between;
     box-sizing: border-box;
 }
-.child_box1 > button {
+.child_box1 > .btn {
     background-color: white;
     display: flex;
     justify-content: center;
@@ -87,7 +94,7 @@
     font-weight: 700;
     line-height: 24px;
 }
-#forgot_pass {
+.forgot_pass {
     font-size: 14px;
     font-weight: 400;
     color: #1E90FF;
@@ -112,7 +119,7 @@
 
 /* main_box3 */
 
-#login_btn {
+.login_btn {
     margin: 30px 0 10px;
     width: 100%;
     background-color: #1E90FF;
@@ -124,7 +131,7 @@
     line-height: 19px;
     border-radius: 5px;
 }
-#login_btn:hover {
+.login_btn:hover {
     background-color: #435f7d;
 }
 
