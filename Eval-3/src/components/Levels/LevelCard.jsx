@@ -1,10 +1,16 @@
 import React from "react";
 import styles from './Level.module.css'
+import { useNavigate } from "react-router-dom";
 
 function LevelCard({levelNumber, levelTitle, levelIconSrc}) {
+
+  const navigate = useNavigate();
+  const startTypingTest = () => { 
+    navigate('/typingtest');
+  };
   return (
     <>
-      <div className={styles.level_box}>
+      <div className={styles.level_box} onClick={startTypingTest}>
         <div className={styles.level_num}> {levelNumber} </div>
         <div className={styles.level_icon}>
           <img className={styles.level_icon_img} src={levelIconSrc} alt="logo" width={100} />
