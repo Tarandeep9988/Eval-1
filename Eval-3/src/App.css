@@ -286,11 +286,13 @@ header {
     font-size: 15px;
     font-weight: 300;
     text-transform: uppercase;
+    color: black;
 }
 .sec6 p:nth-child(2) {
     margin: 10px 0 30px;
     font-size: 28px;
     font-weight: 500;
+    color: black;
 }
 .sec6_1 {
     width: 50%;
