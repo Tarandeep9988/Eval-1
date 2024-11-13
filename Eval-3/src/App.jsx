@@ -1,31 +1,29 @@
-import './App.css'
-import Layout from './Layout'
-import AboutUs from './components/AboutUs/AboutUs'
-import ContactUs from './components/ContactUs/ContactUs'
-import Home from './components/Home/Home'
-import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
-import LevelPage from './components/Levels/LevelPage'
-import LoginPage from './components/LoginPage/LoginPage'
-import TypingTesting from './components/TypingTesting/TypingTesting'
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Layout />}>
-      <Route path='' element={<Home />}></Route>
-      <Route path='aboutUs' element={<AboutUs />}></Route>
-      <Route path='contactUs' element={<ContactUs />}></Route>
-      <Route path='login' element={<LoginPage />}></Route>
-      <Route path='levels' element={<LevelPage />}></Route>
-      <Route path='typingtest' element={<TypingTesting />}></Route>
-    </Route>
-  )
-)
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AboutUs from './components/AboutUs/AboutUs';
+import ContactUs from './components/ContactUs/ContactUs';
+import Home from './components/Home/Home';
+import LevelPage from './components/Levels/LevelPage';
+import LoginPage from './components/LoginPage/LoginPage';
+import TypingTesting from './components/TypingTesting/TypingTesting';
+import Navbar from './components/Home/Navbar';  // If you want to include Navbar
+import ToTopArrow from './components/Home/ToTopArrow'; // If you want to include ToTopArrow
 
 function App() {
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  )
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="aboutUs" element={<AboutUs />} />
+        <Route path="contactUs" element={<ContactUs />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="levels" element={<LevelPage />} />
+        <Route path="typingtest" element={<TypingTesting />} />
+      </Routes>
+      <ToTopArrow />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

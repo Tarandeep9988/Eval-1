@@ -23,7 +23,7 @@ function EntrySection() {
                 <h2 className="main-section-heading">Master Your Typing Skills - Speed, Accuracy, and Fun in One Place!</h2>
                 <div className="main_child_box">
                     <Link to={'typingtest'}>Typing test</Link>
-                    <button className='main_child_a' onClick={handleGetStarted}>Get Started</button>
+                    <button className='main_child_a' onClick={handleGetStarted}>{localStorage.getItem('isLoggedIn') === 'true' ? 'Continue >' : 'Get Started'} </button>
                 </div>
             </div>
         </div>
