@@ -9,24 +9,13 @@ function TypingTesting() {
   const [content, setContent] = useState(defaultContent);
   const [speed, setSpeed] = useState(0);
   const [accuracy, setAccuracy] = useState(100);
+  const [startingTime, setStartingTime] = useState(null); // Updated to use state
   const start_stop_btn = useRef(null);
   const input_field = useRef(null);
 
-  var starting_time = new Date();
-
   const getContent = () => { 
-    //   const typingPracticeParagraphs = [
-    //   "Typing is a skill that improves with practice. Focus on accuracy first, then speed.",
-    //   "Good posture is key to effective typing. Sit up straight and keep your wrists relaxed.",
-    //   "Consistency is important. Regular practice helps build muscle memory and speed.",
-    //   "Typing without looking at the keys can boost your speed. Try to memorize the key positions.",
-    //   "Accuracy matters more than speed when you start. It’s easier to type fast once you’re accurate."
-    // ];
-    // const randomIndex = Math.floor(Math.random() * typingPracticeParagraphs.length);
-    // const para = typingPracticeParagraphs[randomIndex];
-    // return para;
     return location.state;
-  }
+  };
   
   const startTypingTest = () => {
     input_field.current.disabled = false;
@@ -34,9 +23,10 @@ function TypingTesting() {
     input_field.current.value = "";
     console.log("Start typing test");
     setContent(getContent());
-    starting_time = Date.now();
+    setStartingTime(Date.now()); 
     input_field.current.focus();
   };
+  
   const stopTypingTest = () => {
     input_field.current.disabled = true;
     setContent(defaultContent);
@@ -60,28 +50,29 @@ function TypingTesting() {
   const handleKeyboardInput = () => {
     const typed_content = input_field.current.value;
     const typed_length = typed_content.length;
-    // Calculating the time taken
-    const time_taken = (Date.now() - starting_time) / 60000; // milliseconds->minutes
-    // Calculating speed
-    const words_typed = typed_content.split(" ").length;
-    const speedWPM = words_typed / time_taken;
-    setSpeed(typed_length ? String(Math.round(speedWPM, 1)) : String(0));
+
+    // Calculating the time taken in minutes
+    const time_taken = (Date.now() - startingTime) / 60000;
     
+    // Calculate words typed as characters typed divided by 5 (average word length)
+    const words_typed = typed_length / 5;
     
+    // Prevent large values by ensuring a minimum time has passed
+    const speedWPM = time_taken > 0 ? words_typed / time_taken : 0;
+    setSpeed(typed_length ? String(Math.round(speedWPM)) : String(0));
+    
+    // Calculating accuracy
     let errors = 0;
     for (let i = 0; i < typed_length; i++) {
       if (!(typed_content[i] === content[i])) {
         errors++;
-        console.log("Error");
       }
     }
-    if (errors > 0) {
-      input_field.current.style.backgroundColor = "red";
-    } else {
-      input_field.current.style.backgroundColor = "white";
-    }
-    const new_accuracy = ((typed_length - errors) / typed_length) * 100;
-    setAccuracy(String(Math.round(new_accuracy, 1)));
+    input_field.current.style.backgroundColor = errors > 0 ? "red" : "white";
+    
+    const new_accuracy = typed_length ? ((typed_length - errors) / typed_length) * 100 : 100;
+    setAccuracy(String(Math.round(new_accuracy)));
+    
     if (typed_length === content.length) {
       stopTypingTest();
     }
