@@ -1,4 +1,5 @@
 import React from 'react';
+import GetStarted from './GetStarted';
 
 const WhatIsTypingTrain = () => {
   return (
@@ -13,7 +14,7 @@ const WhatIsTypingTrain = () => {
           <p>What is TypingTrain?</p>
           <p>TypingTrain is the most effective way to learn how to type</p>
           <p>It is web-based and highly effective. TypingTrain is (and will always be) free for both individuals and schools.</p>
-          <button className="get_started_btn" id="get_started_button1" onClick={() => {/* Add functionality here */}}>Get started</button>
+          <GetStarted />
         </div>
       </div>
     </div>

@@ -13,7 +13,6 @@ function EntrySection() {
       alert('Please login to continue');
       navigate('/login');
     }
-    
   };
   
   return (

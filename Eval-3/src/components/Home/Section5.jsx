@@ -1,4 +1,5 @@
 import React from 'react';
+import GetStarted from './GetStarted';
 
 const Section5 = () => {
   const features = [
@@ -66,7 +67,7 @@ const Section5 = () => {
         ))}
       </div>
       <div className="sec5_3">
-        <button className="get_started_btn" id="get_started_button2">Get started</button>
+        <GetStarted />
       </div>
     </div>
   );
