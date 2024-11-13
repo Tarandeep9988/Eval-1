@@ -105,7 +105,7 @@ header {
     justify-content: center;
 
 }
-.main_child a {
+.main_child a, .main_child_a{
     color: white;
     background-color: #1E90FF;
     border: none;
@@ -117,7 +117,7 @@ header {
     box-sizing: border-box;
     width: fit-content;
 }
-.main_child a:nth-child(2) {
+.main_child a:nth-child(2), .main_child_a {
     background-color: rgba(255, 255, 255, 0.8);
     color: #1E90FF;
 
