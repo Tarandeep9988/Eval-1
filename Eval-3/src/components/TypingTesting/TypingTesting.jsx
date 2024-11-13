@@ -9,7 +9,7 @@ function TypingTesting() {
   const [content, setContent] = useState(defaultContent);
   const [speed, setSpeed] = useState(0);
   const [accuracy, setAccuracy] = useState(100);
-  const [startingTime, setStartingTime] = useState(null); // Updated to use state
+  const [startingTime, setStartingTime] = useState(null); 
   const start_stop_btn = useRef(null);
   const input_field = useRef(null);
 
@@ -43,7 +43,7 @@ function TypingTesting() {
 
   const stopTypingTest = () => {
     input_field.current.disabled = true;
-    setContent(defaultContent);
+    start_stop_btn.current.innerText = "Start";
   };
 
   const handleButtonclick = () => {
@@ -68,7 +68,7 @@ function TypingTesting() {
     // Calculating the time taken in minutes
     const time_taken = (Date.now() - startingTime) / 60000;
 
-    // Calculate words typed as characters typed divided by 5 (average word length)
+    // Calculate words typed as characters typed divided by 5
     const words_typed = typed_length / 5;
 
     // Prevent large values by ensuring a minimum time has passed
@@ -89,7 +89,8 @@ function TypingTesting() {
       : 100;
     setAccuracy(String(Math.round(new_accuracy)));
 
-    if (typed_length === content.length) {
+    if (typed_content === content) {
+      console.log("Test completed");
       stopTypingTest();
     }
   };
