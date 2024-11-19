@@ -6,8 +6,8 @@ import Home from './components/Home/Home';
 import LevelPage from './components/Levels/LevelPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import TypingTesting from './components/TypingTesting/TypingTesting';
-import Navbar from './components/Home/Navbar';  // If you want to include Navbar
-import ToTopArrow from './components/Home/ToTopArrow'; // If you want to include ToTopArrow
+import Navbar from './components/Home/Navbar'; 
+import ToTopArrow from './components/Home/ToTopArrow';
 
 function App() {
   return (

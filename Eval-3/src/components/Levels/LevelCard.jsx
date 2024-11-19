@@ -20,7 +20,7 @@ function LevelCard({levelNumber, levelTitle, levelIconSrc, levelContent}) {
         <div className={styles.level_icon}>
           <img className={styles.level_icon_img} src={levelIconSrc} alt="logo" width={100} />
         </div>
-        <div className={styles.level_name}>{levelTitle}</div>
+        <div className={styles.level_name}>{levelTitle}</div>l
       </div>
     </>
   );
